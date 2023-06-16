@@ -185,9 +185,6 @@ document.addEventListener("DOMContentLoaded",function(){
                             moneyright = (picJson[6].point);
                     }
                     $('#money').html(moneyleft + moneycenter + moneyright + "球");
-                    
-                    
-
                 }
                 }
           }
@@ -225,6 +222,25 @@ document.addEventListener("DOMContentLoaded",function(){
     
     });
 
-    // **
+    
+  //*
+  <script>
+  $('[startFlg3=2]').on('click', function()  {
+    const id = $(this).data('id');
+    const point = $(this).data('point');
+    
+    $.ajaxSetup({
+        type: "POST",
+      });
 
+    $.ajax({
+            url: "/slot",
+            type: "POST",
+            datatype: 'html',
+            }).done(function(point){
+                $('#money').html(+"球");
+            });
+        });
+        </script>
+   //*
 });

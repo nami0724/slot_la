@@ -71,23 +71,6 @@
         
         @extends('layouts.footer')
 
-        <script type="text/javascript">
-            $(ajax).on('click',function(){
-                $.ajex({
-                type: 'POST',
-                url: 'point.php',
-                cache: false,
-                datatype: 'json',
-                data:{
-                    'id' : $('#id').val(),
-                    'point' : $('point').val()
-                }
-            })
-                .done((data) => {
-
-                });
-            });
-            </script>
   </body>
 </html>
 

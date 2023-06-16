@@ -21,5 +21,6 @@ Auth::routes();
 
 Route::get('/index', [App\Http\Controllers\HomeController::class, 'index'])->name('index');
 Route::get('/logout','App\Http\Controllers\LoginController@logout');
+Route::get('/points', 'ContactController@point');
+Route::post('/ajax/points', 'Ajax\PointController@point');
 
-$point = htmlspecialchars($_POST[point]);

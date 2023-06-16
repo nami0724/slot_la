@@ -9,7 +9,7 @@ class \PointController extends Controller
 {
    public function point() {
     return response()->json([
-        'result' => true
+        'point' =>true
     ]);
    }
 }
