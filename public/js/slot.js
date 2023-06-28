@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded",function(){
     const rightStop = $('#rightStop');
     const startButton = $('#startButton');
     const resetButton = $('#resetButton');
-    const threeNumber=$('threeNumber');
+    const threeNumber = $('threeNumber');
     const money = $('money');
     let moneyleft = 0;
     let moneycenter = 0;
@@ -75,7 +75,7 @@ document.addEventListener("DOMContentLoaded",function(){
             }else{
                 $('#leftImg').attr('src', picJson[5].URL);
             }
-            $('#money').html('p'+"球");
+            // $('#money').html('p'+"球");
         }
         if(startFlg2 == 1){
             random2 = Math.floor( Math.random(1) * 100);
@@ -92,7 +92,7 @@ document.addEventListener("DOMContentLoaded",function(){
             }else{
                 $('#centerImg').attr('src', picJson[5].URL);
             }
-            $('#money').html('p'+"球");
+            // $('#money').html('p'+"球");
         }
         if(startFlg3 == 1){
             random3 = Math.floor( Math.random(1) * 100);
@@ -109,7 +109,7 @@ document.addEventListener("DOMContentLoaded",function(){
             }else{
                 $('#rightImg').attr('src', picJson[5].URL);
             }
-            $('#money').html('p'+"球");
+            // $('#money').html('p'+"球");
         }
         
         
@@ -118,7 +118,7 @@ document.addEventListener("DOMContentLoaded",function(){
             $('#rightImg').attr('src', picJson[0].URL);
             $('#centerImg').attr('src', picJson[0].URL);
             $('#leftImg').attr('src', picJson[0].URL);
-            $('#money').html(0+"球");
+            // $('#money').html(0+"球");
           }
         }
           if(startFlg1 == 2 && startFlg2 == 2 && startFlg3 == 2){
@@ -184,7 +184,7 @@ document.addEventListener("DOMContentLoaded",function(){
                     }else if($('#rightImg').attr('src') == picJson[6].URL){
                             moneyright = (picJson[6].point);
                     }
-                    $('#money').html(moneyleft + moneycenter + moneyright + "球");
+                    // $('#money').html(moneyleft + moneycenter + moneyright + "球");
                 }
                 }
           }
@@ -198,7 +198,7 @@ document.addEventListener("DOMContentLoaded",function(){
         startFlg3=1;
         $('#startButton').attr('src','https://3.bp.blogspot.com/-fFUY85vORJg/Vvpdoan991I/AAAAAAAA5Rg/adywSGA7HBQ_Y2FmZWwDJtUwI-tJbz5eQ/s800/button_start2.png');
         $('#resetButton').attr('src','https://2.bp.blogspot.com/-cp5f6mhUcSw/Vla-Gu0ZtmI/AAAAAAAA1CU/8q2cAji1H8s/s800/reset_buttn_off.png');
-        $('#money').html(+"球");
+        // $('#money').html(+"球");
     });
     leftStop.on('click',function(){
         startFlg1=2;
@@ -208,7 +208,7 @@ document.addEventListener("DOMContentLoaded",function(){
     });
     rightStop.on('click',function(){
         startFlg3=2;
-    });
+          });
 
     resetButton.on('click',function(){
         startFlg1=0;
@@ -219,28 +219,10 @@ document.addEventListener("DOMContentLoaded",function(){
         $('#leftImg').attr('src','https://1.bp.blogspot.com/-5ZKfHE46N_w/U9zsZKNSJwI/AAAAAAAAkdI/EgZ4lm7z3UE/s1600/number_7.png');
         $('#centerImg').attr('src','https://1.bp.blogspot.com/-5ZKfHE46N_w/U9zsZKNSJwI/AAAAAAAAkdI/EgZ4lm7z3UE/s1600/number_7.png');
         $('#rightImg').attr('src','https://1.bp.blogspot.com/-5ZKfHE46N_w/U9zsZKNSJwI/AAAAAAAAkdI/EgZ4lm7z3UE/s1600/number_7.png');
-    
     });
 
     
-  //*
-  <script>
-  $('[startFlg3=2]').on('click', function()  {
-    const id = $(this).data('id');
-    const point = $(this).data('point');
-    
-    $.ajaxSetup({
-        type: "POST",
-      });
-
-    $.ajax({
-            url: "/slot",
-            type: "POST",
-            datatype: 'html',
-            }).done(function(point){
-                $('#money').html(+"球");
-            });
-        });
-        </script>
-   //*
+ 
+  
+   
 });

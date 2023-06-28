@@ -15,12 +15,20 @@ use Illuminate\Support\Facades\Route;
 
 // Route::get('slot_top','App\Http\Controllers\SlotController@index');
 
+Route::get('/', function(){
+    return view('login');
+
+});
 Route::get('slot','App\Http\Controllers\SlotController@index');
-Route::get('login','App\Http\Controllers\LoginController@index');
 Auth::routes();
 
 Route::get('/index', [App\Http\Controllers\HomeController::class, 'index'])->name('index');
 Route::get('/logout','App\Http\Controllers\LoginController@logout');
-Route::get('/points', 'ContactController@point');
-Route::post('/ajax/points', 'Ajax\PointController@point');
+Route::get('/point', 'PointController@money');
+Route::get('/ajax/points', 'App\Http\Controllers\Ajax\PointController@money');
 
+Route::prefix('point')->group(function() {
+    Route::get('/create', 'App\Http\Controllers\PointController@create');
+    Route::get('/update', 'App\Http\Controllers\PointController@update');
+    Route::get('/save', 'App\Http\Controllers\PointController@save');
+});

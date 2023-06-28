@@ -24,12 +24,16 @@ header h1 {
     position: absolute;
 }
 
-header p{
+input {
+    color: black;
+}
+.money{
     color: white;
     font-size: 50px;
-    padding-left: 2000px;
+    margin-left: 2000px;
     padding-top : 0px;
     position: absolute;
+    width: 200px;
 }
 
 .image {

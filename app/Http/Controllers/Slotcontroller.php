@@ -7,23 +7,13 @@ use App\Models\Point;
 
 class Slotcontroller extends Controller
 {
-    public function index(Request $request)
-    {
-        return view('slot.index');
-    }
+    public function index(Request $request) {
+        $money = DB::select('select * from point');
+        return view('slot.index',['items' => $items]);
+    
 
-    public function func() {
-        $point = new Point;
-        $points = Point::all();
-        return view('slot.index', compact('point'));
     }
-
-    protected function create(array $data)
-    {
-        return Point::create([
-            'point' => $data['point'],
-        ]);
-    }
+    
 
 
 }

@@ -46,6 +46,6 @@ class LoginController extends Controller
     public function logout(Request $request)
 {
     $this->performLogout($request);
-    return redirect()->route('login'); // ここを好きな遷移先に変更する。
+    return redirect()->route('login'); 
 }
 }

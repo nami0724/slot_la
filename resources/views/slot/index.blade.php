@@ -5,6 +5,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
         <title>SLOT</title>
         <link rel="stylesheet" href="/css/style.css" >
         <script src="{{ asset('js/slot.js') }}" defer></script>
@@ -13,7 +14,9 @@
 @section('content')
     <header>
       <h1>スロット</h1>
-      <p class="money" id="money">貯玉</p>
+      <p class="money" type="text" name="money" id="money" value="">貯玉</p>
+      <!-- <input class="money" type="text" name="money" id="money" value="" placeholder="貯玉"  > -->
+
       @guest
       <div class = "login">
                             @if (Route::has('login'))
@@ -32,7 +35,7 @@
                         <div class = "logout">
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}
+                                    {{ Auth::user()->name }} さん
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
@@ -69,8 +72,24 @@
     
         <img class="resetButton" id="resetButton" src="https://2.bp.blogspot.com/-cp5f6mhUcSw/Vla-Gu0ZtmI/AAAAAAAA1CU/8q2cAji1H8s/s800/reset_buttn_off.png"></img>
         
-        @extends('layouts.footer')
+        <script>
+            $(function(){
+               
+                $('#rightStop').on('click',function(){
+                    $.ajax({
+                        url: '/ajax/points',
+                        type: 'GET',
+                        dataType: 'json',
+                        data:{ "point" : $("#money").val() }
 
+                    }).done(function(data){
+                        $('#money').text(+"球");
+                    });
+                    })
+                })
+            
+            </script>
+        @extends('layouts.footer')
   </body>
 </html>
 
