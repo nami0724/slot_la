@@ -73,6 +73,7 @@ footer {
     background-color: #000033;
     position: absolute;
     bottom: 0;
+    color: white;
 }
 
 .resetButton{
@@ -89,11 +90,31 @@ footer {
     margin-top: 10px;
 }
 
+.nav-link_2 {
+    width: 500px;
+    display: inline;
+    margin-top: 10px;
+    margin: 30px;
+}
+
 .login {
     display: flex;
     font-size: 30px;
     margin-left: 2000px;
     margin-top: 100px;
+    list-style:none;
+}
+
+.login_2 {
+    display: flex;
+    font-size: 30px;
+    margin-left: 20px;
+    color: black;
+    list-style:none;
+}
+
+.login2 h1 {
+    margin-top: 50px;
 }
 
 .container {

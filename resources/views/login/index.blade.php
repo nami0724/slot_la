@@ -1,4 +1,6 @@
 @extends('layouts.app')
+@include('layouts.footer')
+
 <!DOCTYPE html>
 <html lang="ja">
     <head>
@@ -9,10 +11,22 @@
         <script src="{{ asset('js/slot.js') }}" defer></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     </head>
-@section('content')
-    <h1>ログインしてください</h1>
+    <header>
+      <h1>ログインしてください</h1>
+    </header>
+    <body>
+          <div class = "login_2">
+              <li class="nav-item_2">
+                <a class="nav-link_2" href="{{ route('login') }}">{{ __('ログイン') }}</a>
+              </li>
 
-    @section('footer')
-        copyright 2020 tuyano.
-        @endsection
+               <li class="nav-item_2">
+                  <a class="nav-link_2" href="{{ route('register') }}">{{ __('新規登録') }}</a>
+               </li>
+           </div>
+@yield('footer')
+       
+
+</body>
+</html>
 
